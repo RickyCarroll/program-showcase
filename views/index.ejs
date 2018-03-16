@@ -1,0 +1,36 @@
+<!-- if you want to output a value you need to use
+     the = after the %. -->
+<% include partials/header.ejs%>
+
+<h1><%= title %></h1>
+
+<h1> Add User </h1>
+<% if (errors) { %>
+<ul>
+    <% errors.forEach(function (errors) { %>
+    <li><%= errors.msg %></li>
+    <% }) %>
+</ul>
+<%}%>
+
+ %>
+<form method="POST" action="/users/add">
+    <label>Username</label> <br>
+    <input type="text" name="username">
+    <br>
+    <label>Email</label><br>
+    <input type="text" name="email">
+    <br>
+    <label>Password</label><br>
+    <input type="text" name="password">
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
+
+<ul>
+    <% users.forEach(function (user) { %>
+        <li><%= user.username %> <%= user.email %></li>
+    <% }) %>
+</ul>
+<% include partials/footer.ejs%>
