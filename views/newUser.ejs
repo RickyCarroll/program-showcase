@@ -1,0 +1,20 @@
+<!-- if you want to output a value you need to use
+     the = after the %. -->
+<% include partials/header.ejs%>
+
+<link href="templates/newUser.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+<h1><%= title %></h1>
+
+<a href="/">HomePage </a>
+
+<ul>
+    <% users.forEach(function (user) { %>
+    <li><%= user.username %> <%= user.email %></li>
+    <% }) %>
+</ul>
+
+<% include partials/footer.ejs%>

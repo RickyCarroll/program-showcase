@@ -77,7 +77,7 @@ app.get('/', function (req, res) {
     });
 });
 
-/* createAccount '/' */
+/* createAccount '/createAccount' */
 app.get('/createAccount', function (req, res) {
     /* you can render objects and array with send(object). */
     /* render takes an .ejs file and renders it*/
@@ -88,8 +88,20 @@ app.get('/createAccount', function (req, res) {
     });
 });
 
+/* newUser '/submit' */
+/*app.get('/submit', function (req, res) {
+    /!* you can render objects and array with send(object). *!/
+    /!* render takes an .ejs file and renders it*!/
+    console.log('go to the submit page');
+    res.render('newUser',{
+        title: "Account Created!",
+        users: users
+    });
+});
+*/
+
 /* this event is for when someone enters their information. */
-app.post('/submit', function (req,res) {
+app.post('/createAccount', function (req,res) {
     console.log('Form Submitted');
 
     req.checkBody('username','Username is Required').notEmpty();
@@ -99,7 +111,7 @@ app.post('/submit', function (req,res) {
     var errors = req.validationErrors();
 
     if(errors){
-        res.render('index',{
+        res.render('createAccount',{
             title: "Program Showcase",
             users: users,
             errors: errors
@@ -107,6 +119,10 @@ app.post('/submit', function (req,res) {
         console.log('ERRORS');
 
     } else {
+        res.render('newUser',{
+            title: "Account Created!",
+            users: users
+        });
         var newUser = {
             username: req.body.username,
             email: req.body.email,
