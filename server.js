@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 /* Set Static Path to templates which is where the html/css is. */
-app.use(express.static(path.join(__dirname,'templates')));
+app.use(express.static(path.join(__dirname,'views')));
 
 /* Express validator error formatter. */
 app.use(expressValidator());
@@ -72,13 +72,24 @@ var users = [
 app.get('/', function (req, res) {
     /* you can render objects and array with send(object). */
     /* render takes an .ejs file and renders it*/
-    res.render('index',{
-        title: "Program Showcase",
+    res.render('home',{
+        title: "Program Showcase"
+    });
+});
+
+/* createAccount '/' */
+app.get('/createAccount', function (req, res) {
+    /* you can render objects and array with send(object). */
+    /* render takes an .ejs file and renders it*/
+    console.log('go to the createAccount page');
+    res.render('createAccount',{
+        title: "Create Account",
         users: users
     });
 });
 
-app.post('/users/add', function (req,res) {
+/* this event is for when someone enters their information. */
+app.post('/submit', function (req,res) {
     console.log('Form Submitted');
 
     req.checkBody('username','Username is Required').notEmpty();
