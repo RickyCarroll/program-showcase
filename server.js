@@ -88,6 +88,14 @@ app.get('/createAccount', function (req, res) {
     });
 });
 
+
+/* projectsPage '/projectsPage' */
+app.get('/projectsPage', function (req, res) {
+    /* you can render objects and array with send(object). */
+    /* render takes an .ejs file and renders it*/
+    res.render('projectsPage');
+});
+
 /* newUser '/submit' */
 /*app.get('/submit', function (req, res) {
     /!* you can render objects and array with send(object). *!/
