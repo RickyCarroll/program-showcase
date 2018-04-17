@@ -1,15 +1,40 @@
 <!-- if you want to output a value you need to use
      the = after the %. -->
 <% include partials/header.ejs%>
-
-<link href="templates/newUser.css" rel="stylesheet" type="text/css">
+    <link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
+    <link href="templates/newUser.css" rel="stylesheet" type="text/css">
 </head>
+
+
 <body>
 
 
-<h1><%= title %></h1>
+<h1>'Username' Account Created </h1>
 
-<a href="/">HomePage </a>
+<nav class="navbar navbar-expand-sm navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar3">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="createAccount">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="projectsPage">Search Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<p> There will be a list of uploaded files</p>
+
+<button> Upload </button>
 
 <ul>
     <% users.forEach(function (user) { %>
