@@ -97,22 +97,23 @@ app.get('/projectsPage', function (req, res) {
 });
 
 /* newUser '/submit' */
-/*app.get('/submit', function (req, res) {
-    /!* you can render objects and array with send(object). *!/
-    /!* render takes an .ejs file and renders it*!/
-    console.log('go to the submit page');
-    res.render('newUser',{
-        title: "Account Created!",
-        users: users
-    });
-});
-*/
+//app.post('/submit', function (req, res) {
+    /* you can render objects and array with send(object). */
+    /* render takes an .ejs file and renders it*/
+  //  console.log('go to the new user page');
+    //res.render('newUser',{
+      //  title: "Account Created!",
+    //});
+//})
+
 
 /* this event is for when someone enters their information. */
-app.post('/createAccount', function (req,res) {
+app.post('/newUser', function (req,res) {
     console.log('Form Submitted');
 
-    req.checkBody('username','Username is Required').notEmpty();
+
+    //Bootstrap takes care of missing fields
+    /*req.checkBody('username','Username is Required').notEmpty();
     req.checkBody('email','Email is Required').notEmpty();
     req.checkBody('password','Password is Required').notEmpty();
 
@@ -125,8 +126,8 @@ app.post('/createAccount', function (req,res) {
             errors: errors
         });
         console.log('ERRORS');
+        */
 
-    } else {
         res.render('newUser',{
             title: "Account Created!",
             users: users
@@ -137,6 +138,8 @@ app.post('/createAccount', function (req,res) {
             password: req.body.password
         };
         console.log('Success');
+
+
         /*This would be used if we were using mongo db. */
         /*db.user.insert(newUser,function (err,result) {
             if (err) {
@@ -144,9 +147,9 @@ app.post('/createAccount', function (req,res) {
             }
             res.redirect('/'); /!* takes the user back to the main website. *!/
         })*/
-    }
 
 });
+
 
 /* This listens for including requests for the website. */
 app.listen(8000,function () {
