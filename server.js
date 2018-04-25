@@ -13,6 +13,8 @@ var path = require('path');
 /* This is used to validate the user input.
  * this requires some middle ware */
 var expressValidator = require('express-validator');
+var mongojs = require('mongojs');
+var db = mongojs('codex', ['users']);
 
 var app = express();
 
@@ -46,34 +48,17 @@ app.use(function (req,res,next) {
     next();
 })
 
-var users = [
-    {
-        id: 1,
-        username: 'John',
-        password : 'Doe',
-        email: 'johndoe@gmail.com',
-    },
-    {
-        id: 2,
-        username : 'Bob',
-        password : 'Doe',
-        email: 'bobdoe@gmail.com',
-    },
-    {
-        id: 3,
-        username : 'Jill',
-        password : 'Doe',
-        email: 'jilldoe@gmail.com',
-    }
-]
-
 
 /* home page '/' */
 app.get('/', function (req, res) {
     /* you can render objects and array with send(object). */
     /* render takes an .ejs file and renders it*/
-    res.render('home',{
-        title: "Program Showcase"
+    db.users.find(function (err,docs) {
+        res.render('home',{
+            title: "Program Showcase",
+            users: docs
+        });
+        console.log(docs);
     });
 });
 
@@ -84,7 +69,7 @@ app.get('/createAccount', function (req, res) {
     console.log('go to the createAccount page');
     res.render('createAccount',{
         title: "Create Account",
-        users: users
+        //users: users
     });
 });
 
@@ -128,25 +113,26 @@ app.post('/newUser', function (req,res) {
         console.log('ERRORS');
         */
 
-        res.render('newUser',{
-            title: "Account Created!",
-            users: users
-        });
-        var newUser = {
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-        };
-        console.log('Success');
 
+    var newUser = {
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    };
+    console.log('Success');
 
-        /*This would be used if we were using mongo db. */
-        /*db.user.insert(newUser,function (err,result) {
-            if (err) {
-                console.log(err);
-            }
-            res.redirect('/'); /!* takes the user back to the main website. *!/
-        })*/
+    res.render('newUser',{
+        title: "Account Created!",
+        user: newUser
+    });
+
+    /*This would be used if we were using mongo db. */
+    db.users.insert(newUser,function (err,result) {
+        if (err) {
+            console.log(err);
+        }
+        //res.redirect('/'); /* takes the user back to the main website. */
+    });
 
 });
 
@@ -156,6 +142,8 @@ app.listen(8000,function () {
     console.log('Server Started on Port 8000...');
 
 });
+
+
 
 /*file.readFile('templates/frontpage.html',(err,html) => {
     if(err){

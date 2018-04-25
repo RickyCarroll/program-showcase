@@ -51,9 +51,14 @@
             <p>Create an account or log in to get started</p>
             <hr>
             <h3>Don't have an Account? </h3>
-            <a id="createAccountLink" href="createAccount"> Create New Account <a>
+            <a id="createAccountLink" href="createAccount"> Create New Account </a>
         </div>
     </div>
+    <ul>
+        <% users.forEach(function (user) { %>
+        <li><%= user.username %> <%= user.email %></li>
+        <% }) %>
+    </ul>
 </div>
 
 

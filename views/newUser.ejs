@@ -9,7 +9,7 @@
 <body>
 
 
-<h1>'Username' Account Created </h1>
+<h1>congratulations! <%= user.username %> your Account has been Created </h1>
 
 <nav class="navbar navbar-expand-sm navbar-custom">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
@@ -37,9 +37,9 @@
 <button> Upload </button>
 
 <ul>
-    <% users.forEach(function (user) { %>
+
     <li><%= user.username %> <%= user.email %></li>
-    <% }) %>
+
 </ul>
 
 <% include partials/footer.ejs%>
