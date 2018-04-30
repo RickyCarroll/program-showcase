@@ -5,16 +5,26 @@
   * maybe we should do mongodb
   * if so we should check out mongojs -> npm install mongojs --save */
 
-/*const http = require('http');
-const file = require('fs');*/
+
 var express = require('express');
-var bodyParser = require('body-parser');
 var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 /* This is used to validate the user input.
  * this requires some middle ware */
 var expressValidator = require('express-validator');
-var mongojs = require('mongojs');
-var db = mongojs('codex', ['users']);
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/codex');
+var db = mongoose.connection;
+
+var home = require('home');
+var users = require('users');
+var projects = require('projects');
 
 var app = express();
 
@@ -35,51 +45,49 @@ app.set('views',path.join(__dirname,'views'));
 /* Body Parser Middleware*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
 /* Set Static Path to templates which is where the html/css is. */
 app.use(express.static(path.join(__dirname,'views')));
 
+/* Express Session */
+app.use(session({
+    secret: 'keyboard cat',
+    saveUninitialized: true,
+    resave: true
+}));
+
+/* Passport init */
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 /* Express validator error formatter. */
 app.use(expressValidator());
 
+app.use(flash());
+
 /* global variables */
 app.use(function (req,res,next) {
+    res.local.success_msg =req.flash('success_msg');
+    res.local.error_msg = req.flash('error_msg');
+    res.local.error = req.flash('error');
+    next();
+});
+/*app.use(function (req,res,next) {
     res.locals.errors = null;
     next();
-})
+});*/
+
+app.use('/', home);
+app.use('/createAccount', users);
+app.use('/projectsPage', projects);
 
 
-/* home page '/' */
-app.get('/', function (req, res) {
-    /* you can render objects and array with send(object). */
-    /* render takes an .ejs file and renders it*/
-    db.users.find(function (err,docs) {
-        res.render('home',{
-            title: "Program Showcase",
-            users: docs
-        });
-        console.log(docs);
-    });
-});
-
-/* createAccount '/createAccount' */
-app.get('/createAccount', function (req, res) {
-    /* you can render objects and array with send(object). */
-    /* render takes an .ejs file and renders it*/
-    console.log('go to the createAccount page');
-    res.render('createAccount',{
-        title: "Create Account",
-        //users: users
-    });
-});
 
 
-/* projectsPage '/projectsPage' */
-app.get('/projectsPage', function (req, res) {
-    /* you can render objects and array with send(object). */
-    /* render takes an .ejs file and renders it*/
-    res.render('projectsPage');
-});
+
+
 
 /* newUser '/submit' */
 //app.post('/submit', function (req, res) {
@@ -92,55 +100,32 @@ app.get('/projectsPage', function (req, res) {
 //})
 
 
-/* this event is for when someone enters their information. */
-app.post('/newUser', function (req,res) {
-    console.log('Form Submitted');
 
 
-    //Bootstrap takes care of missing fields
-    /*req.checkBody('username','Username is Required').notEmpty();
-    req.checkBody('email','Email is Required').notEmpty();
-    req.checkBody('password','Password is Required').notEmpty();
-
-    var errors = req.validationErrors();
-
-    if(errors){
-        res.render('createAccount',{
-            title: "Program Showcase",
-            users: users,
-            errors: errors
-        });
-        console.log('ERRORS');
-        */
-
-
+/*app.post('/', function (req,res) {
+    console.log('user logged in');
     var newUser = {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
     };
-    console.log('Success');
+    console.log(newUser.username + " " + newUser.email);
+    var account = db.users.findOne(({username:newUser.username.toString(),email:newUser.email.toString()}));
+    if (account.password.toString() === newUser.password.toString()){
+        console.log(account.password.toString());
+        console.log(newUser.password.toString());
+        res.render('user',{
+            title: "Account Created!",
+            user: newUser
+        });
+    }
 
-    res.render('newUser',{
-        title: "Account Created!",
-        user: newUser
-    });
-
-    /*This would be used if we were using mongo db. */
-    db.users.insert(newUser,function (err,result) {
-        if (err) {
-            console.log(err);
-        }
-        //res.redirect('/'); /* takes the user back to the main website. */
-    });
-
-});
+});*/
 
 
 /* This listens for including requests for the website. */
 app.listen(8000,function () {
     console.log('Server Started on Port 8000...');
-
 });
 
 

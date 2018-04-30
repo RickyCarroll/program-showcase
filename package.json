@@ -12,11 +12,20 @@
     "url": "git@gitlab.cs.wwu.edu:cashz/senior_project.git"
   },
   "dependencies": {
+    "bcryptjs": "*",
     "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.3",
+    "express-session": "*",
+    "express-messages": "*",
     "ejs": "^2.5.7",
     "express": "*",
     "express-validator": "^5.0.3",
-    "mongojs": "^2.5.0"
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
   },
   "author": "Zachary Cash",
   "license": "ISC"
