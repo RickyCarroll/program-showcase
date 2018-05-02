@@ -2,6 +2,7 @@ var express = require('express');
 var router =  express.Router();
 
 var User = require('./models/user');
+console.log('Added some console message');
 
 /* createAccount '/createAccount' */
 router.get('/', function (req, res) {
