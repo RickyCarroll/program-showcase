@@ -22,21 +22,22 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/codex');
 var db = mongoose.connection;
 
-var home = require('home');
-var users = require('users');
-var projects = require('projects');
+var home = require('./home');
+var users = require('./users');
+var projects = require('./projects');
+var login = require('./login');
 
 var app = express();
 
-/* this is middle ware and it is used to preform a task
+/*/!* this is middle ware and it is used to preform a task
  * in between the request and the response.
  * it was access to both the request and the response and
- * it will run every time the application is loaded. */
+ * it will run every time the application is loaded. *!/
 var logger = function (request, response, next) {
     console.log('Logging...');
     next();
 };
-app.use(logger);
+app.use(logger);*/
 
 /* View Engine */
 app.set('view engine', 'ejs');
@@ -69,9 +70,9 @@ app.use(flash());
 
 /* global variables */
 app.use(function (req,res,next) {
-    res.local.success_msg =req.flash('success_msg');
-    res.local.error_msg = req.flash('error_msg');
-    res.local.error = req.flash('error');
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
     next();
 });
 /*app.use(function (req,res,next) {
@@ -82,7 +83,7 @@ app.use(function (req,res,next) {
 app.use('/', home);
 app.use('/createAccount', users);
 app.use('/projectsPage', projects);
-
+app.use('/login', login);
 
 
 

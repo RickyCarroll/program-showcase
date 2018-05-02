@@ -6,15 +6,7 @@
 
 
 <h1> Create an Account </h1>
-<% if (errors) { %>
-<ul>
-    <% errors.forEach(function (errors) { %>
-    <li><%= errors.msg %></li>
-    <% }) %>
-</ul>
-<%}%>
 
-%>
 
 <nav class="navbar navbar-expand-sm navbar-custom">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
@@ -38,17 +30,30 @@
     </div>
 </nav>
 
+<% if (errors) { %>
+<ul>
+    <% errors.forEach(function (errors) { %>
+    <li><%= errors.msg %></li>
+    <% }) %>
+</ul>
+<% } %>
+
+
+<
 
 <div class="container-fluid">
 
     <div class="row content">
 
+
+
         <div class="col-lg-5 leftHalf">
-            <form method="POST" action="/newUser" class="form-signin">
+            <form method="POST" class="form-signin">
                 <h2 class="form-signin-heading" id="loginText">Create Account</h2>
                 <input type="text1" class="form-control" name="username" id="username" placeholder="Username" required="" autofocus="" style = "margin-bottom: 10px;"/>
                 <input type="text2" class="form-control" name="email" placeholder="Email Address" required="" style = "margin-bottom: 10px;"/>
                 <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="password2" placeholder="Password" required="" />
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
             </form>
         </div>
