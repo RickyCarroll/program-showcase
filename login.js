@@ -7,6 +7,7 @@ var User = require('./models/user');
 
 router.get('/', function (req, res) {
     console.log('go to the login page');
+    console.log('testing the git');
     res.render('login',{
         title: "User login"
     });
