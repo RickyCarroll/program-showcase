@@ -20,7 +20,7 @@ var User = module.exports = mongoose.model('users',UserScheme);
 
 module.exports.createUser = function (newUser, callback) {
     bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash("newUser.password", salt, function(err, hash) {
+        bcrypt.hash(newUser.password, salt, function(err, hash) {
             // Store hash in your password DB.
             newUser.password = hash;
             newUser.save(callback);
@@ -39,8 +39,11 @@ module.exports.getUserById = function (id, callback) {
 };
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
+    console.log("the hash " + hash + " the candidate " + candidatePassword);
+
     bcrypt.compare(candidatePassword,hash, function (err,isMatch) {
         if (err) throw err;
+        console.log("ismatch: " + isMatch);
         callback(null, isMatch);
     });
 };

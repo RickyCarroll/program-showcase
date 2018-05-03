@@ -15,16 +15,19 @@ router.get('/', function (req, res) {
 
 passport.use(new LocalStrategy(
     function(username, password, done) {
-        console.log("getting user");
+        /*console.log("getting user");*/
         User.getUserByUsername(username, function (err,user) {
             console.log("got user");
             if (err) throw err;
+            console.log(user.username);
+            console.log(user.password);
             if (!user){
                 return done(null,false,{message: 'Unknown User'})
             }
-            console.log("checking passwords");
+            /*console.log("checking passwords");
+            console.log(password);*/
             User.comparePassword(password, user.password, function (err, isMatch) {
-                console.log("producing results");
+                /*console.log("producing results");*/
                 if (err) throw err;
                 if (isMatch) {
                     console.log("success!");
@@ -50,7 +53,6 @@ passport.deserializeUser(function(id, done) {
 router.post('/',
     passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash: true}),
     function (req,res) {
-        console.log("posting");
         res.redirect('/');
     });
 

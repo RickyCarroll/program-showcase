@@ -21,7 +21,8 @@ router.post('/', function (req,res) {
     var email = req.body.email;
     var password = req.body.password;
     var password2 = req.body.password2;
-    console.log('Success');
+    /*console.log('Success');
+    console.log(password);*/
 
     req.checkBody('username', 'Username is required').notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
