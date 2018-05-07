@@ -2,7 +2,6 @@ var express = require('express');
 var router =  express.Router();
 
 var User = require('./models/user');
-console.log('Added some console message');
 
 /* createAccount '/createAccount' */
 router.get('/', function (req, res) {
@@ -54,6 +53,7 @@ router.post('/', function (req,res) {
         });
 
         req.flash('success_msg', 'Your account has been created and now you can login.');
+        alert("Success!");
         console.log("redirecting... account has been made");
         res.redirect('/login');
     }

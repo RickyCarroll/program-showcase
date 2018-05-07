@@ -47,13 +47,53 @@ h1{
     font-size: 17px;
 }
 /* Add an active class to highlight the current page */
-#active {
+.nav-item.active {
     background-color: #45a29e;
+    text-decoration: underline;
     color: white;
 }
 
 /* Change the color of links on hover */
 .navbar a:hover {
     background-color: #66fcf1;
+    text-decoration: underline;
+    text-decoration-color: #1f2833;
     color: black;
+}
+
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 33 33' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: white;
+}
+
+footer{
+    background-color: #1f2833;
+    height: 40px;
+    text-align: center;
+    color: white;
+
+}
+
+Command: toastr["error"]("Wrong Password", "Error")
+
+toastr.options = {
+"closeButton": false,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-center",
+"preventDuplicates": false,
+"onclick": null,
+"showDuration": 300,
+"hideDuration": 1000,
+"timeOut": 5000,
+"extendedTimeOut": 1000,
+"showEasing": "swing",
+"hideEasing": "linear",
+"showMethod": "fadeIn",
+"hideMethod": "fadeOut"
 }

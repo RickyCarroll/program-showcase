@@ -3,11 +3,11 @@
 <% include partials/header.ejs%>
 
 <link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
-<link href="templates/home.css" rel="stylesheet" type="text/css">
+<link href="templates/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<h1>Welcome</h1>
+<h1> User Account Page </h1>
 
 <nav class="navbar navbar-expand-sm navbar-custom">
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
@@ -15,7 +15,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar3">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
@@ -36,23 +36,13 @@
     <div class="row content">
 
         <div class="col-sm-5 leftHalf">
-            <h2> Search for Projects</h2>
-            <!-- Search form -->
-            <div class="active-cyan-4 mb-4">
-                <input class="form-control" id ="searchBar" type="text" placeholder="Search Usernames" aria-label="Search">
-            </div>
-
+            <p> Projects uploaded will be listed here</p>
         </div>
 
 
         <div class="col-sm-7 rightHalf">
-            <div id="buttonOptions">
-                <p id="accountText">Get started by creating a new account</p>
-                <a href="createAccount"><button type="button" id="createAccountButton" class="btn btn-dark"> Create an Account</button></a>
-                <p id="mainText"> OR </p>
-                <p id="accountText">Already have existing account?</p>
-                <a href="login"><button type="button" id="LogInButton" class="btn btn-dark">Log in</button></a>
-            </div>
+            <a href="uploadProject"><button type="button" id="uploadButton" class="btn btn-dark">Upload File</button></a>
+            <a href=""><button type="button" id="uploadButton" class="btn btn-dark">Log Out</button></a>
         </div>
     </div>
 </div>

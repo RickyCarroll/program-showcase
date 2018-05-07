@@ -28,12 +28,15 @@ passport.use(new LocalStrategy(
             console.log(password);*/
             User.comparePassword(password, user.password, function (err, isMatch) {
                 /*console.log("producing results");*/
-                if (err) throw err;
+                if (err)
+                    throw err;
+                alert(err);
                 if (isMatch) {
                     console.log("success!");
                     return done(null,user);
                 } else {
                     console.log("failure");
+                    alert("failure");
                    return done(null, false, {message: 'Invalid password'});
                 }
             });

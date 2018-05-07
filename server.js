@@ -26,6 +26,7 @@ var home = require('./home');
 var users = require('./users');
 var projects = require('./projects');
 var login = require('./login');
+//var account = require('./accountPage');
 
 var app = express();
 
@@ -84,7 +85,7 @@ app.use('/', home);
 app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
-
+//app.use('/accountPage', account);
 
 
 

@@ -2,7 +2,6 @@ var express = require('express');
 var router =  express.Router();
 
 
-
 /* home page '/' */
 router.get('/', function (req, res) {
     /* you can render objects and array with send(object). */
