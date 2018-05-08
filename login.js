@@ -7,7 +7,6 @@ var User = require('./models/user');
 
 router.get('/', function (req, res) {
     console.log('go to the login page');
-    console.log('testing the git');
     res.render('login',{
         title: "User login"
     });
@@ -15,13 +14,14 @@ router.get('/', function (req, res) {
 
 passport.use(new LocalStrategy(
     function(username, password, done) {
-        /*console.log("getting user");*/
+        console.log("getting user");
         User.getUserByUsername(username, function (err,user) {
             console.log("got user");
             if (err) throw err;
-            console.log(user.username);
-            console.log(user.password);
+            //console.log(user.username);
+            //console.log(user.password);
             if (!user){
+                console.log("Unknown User");
                 return done(null,false,{message: 'Unknown User'})
             }
             /*console.log("checking passwords");
@@ -30,13 +30,13 @@ passport.use(new LocalStrategy(
                 /*console.log("producing results");*/
                 if (err)
                     throw err;
-                alert(err);
+                console.log(err);
                 if (isMatch) {
                     console.log("success!");
                     return done(null,user);
                 } else {
                     console.log("failure");
-                    alert("failure");
+                    console.log("failure");
                    return done(null, false, {message: 'Invalid password'});
                 }
             });
