@@ -26,6 +26,7 @@ var home = require('./home');
 var users = require('./users');
 var projects = require('./projects');
 var login = require('./login');
+var accountPage = require("./accountPage");
 //var account = require('./accountPage');
 
 var app = express();
@@ -55,8 +56,8 @@ app.use(express.static(path.join(__dirname,'views')));
 /* Express Session */
 app.use(session({
     secret: 'keyboard cat',
-    saveUninitialized: true,
-    resave: true
+    saveUninitialized: false,
+    resave: false
 }));
 
 /* Passport init */
@@ -85,6 +86,7 @@ app.use('/', home);
 app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
+app.use('/user', accountPage);
 //app.use('/accountPage', account);
 
 

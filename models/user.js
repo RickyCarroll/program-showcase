@@ -34,7 +34,15 @@ module.exports.getUserByUsername = function (username, callback) {
     User.findOne(query, callback);
 };
 
+module.exports.getUser = function (username, callback) {
+    var search = {username: username};
+    /*var result =  */User.findOne(search, callback);
+    //console.log("the result is " + result);
+    //return result
+};
+
 module.exports.getUserById = function (id, callback) {
+    console.log("the id is " + id);
     User.findById(id, callback);
 };
 
