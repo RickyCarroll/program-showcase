@@ -7,6 +7,7 @@ var User = require('./models/user');
 
 router.get('/', function (req, res) {
     console.log('go to the login page');
+    console.log(req.url);
     res.render('login',{
         title: "User login"
     });
@@ -36,7 +37,6 @@ passport.use(new LocalStrategy(
                     return done(null,user);
                 } else {
                     console.log("failure");
-                    console.log("failure");
                    return done(null, false, {message: 'Invalid password'});
                 }
             });
@@ -49,14 +49,21 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     User.getUserById(id, function(err, user) {
+        //console.log("deserialize " + user + " all done");
         done(err, user);
     });
 });
 
 router.post('/',
-    passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash: true}),
+    passport.authenticate('local', {failureRedirect:'/login',failureFlash: true}),
     function (req,res) {
-        res.redirect('/');
+        /*var loginUser = User.getUserID(req.body.username);
+        req.login(loginUser, function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });*/
+        res.redirect('/user/' + req.body.username);
     });
 
 module.exports = router;
