@@ -99,6 +99,16 @@ input[type="password"] {
     width: 395px;
 }
 
+#searchbutton{
+    background-color:#45a29e;
+    color: white;
+}
+
+#searchButton:hover{
+    background-color:#66fcf1;
+    color: black;
+}
+
 #buttonOptions{
     margin-left: 20px;
     margin-right: 90px;
