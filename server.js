@@ -21,12 +21,13 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/codex');
 var db = mongoose.connection;
-
+var jquery = require('jquery');
 var home = require('./home');
 var users = require('./users');
 var projects = require('./projects');
 var login = require('./login');
 var accountPage = require("./accountPage");
+var runPage = require("./runPage");
 //var account = require('./accountPage');
 
 var app = express();
@@ -87,6 +88,7 @@ app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
 app.use('/user', accountPage);
+app.use('/user/runPage', runPage);
 //app.use('/accountPage', account);
 
 
