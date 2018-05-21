@@ -88,7 +88,7 @@ app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
 app.use('/user', accountPage);
-app.use('/user/runPage', runPage);
+//app.use('/user/runPage', runPage);
 //app.use('/accountPage', account);
 
 

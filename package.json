@@ -25,7 +25,8 @@
     "mongoose": "*",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "jquery": "^3.3.1"
   },
   "author": "Zachary Cash",
   "license": "ISC"
