@@ -10,8 +10,8 @@ router.get('/', function (req, res) {
     /* you can render objects and array with send(object). */
     /* render takes an .ejs file and renders it*/
     //db.users.find(function (err,docs) {
-    console.log(req.user);
-    console.log(req.isAuthenticated());
+    //console.log(req.user);
+    //console.log(req.isAuthenticated());
         res.render('home',{
             title: "Program Showcase",
             //users: docs
@@ -26,12 +26,19 @@ router.get('/logout', function(req, res){
 });
 
 router.post('/', function (req, res) {
-    User.getUser(req.body.username, function (err,user) {
+    console.log('searching');
+    User.getUserByUsername(req.body.username, function (err,user) {
+        console.log("searching");
+        console.log(user);
         if (err) { throw err}
-        else {
-            res.render('/user/' + user.username, {
+        else if (user != null) {
+            res.render('accountPage', {
                 user: user
             });
+        } else {
+            res.render('home', {
+                title: "Program Showcase",
+            })
         }
     });
     
