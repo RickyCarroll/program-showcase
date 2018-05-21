@@ -4,12 +4,13 @@
 
 <link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
 <link href="templates/login.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
-<h1> User Account Page </h1>
+<h1> Run Page </h1>
 
-<h1> Welcome <%= user.username %> to your account page! </h1>
+<h1> Welcome to the Run Page! </h1>
 
 <nav class="navbar navbar-expand-sm navbar-custom">
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
@@ -32,23 +33,7 @@
         </ul>
     </div>
 </nav>
-<a href="/user/<%= user.username %>/runPage" > Run Program </a>
-<div class="container-fluid">
 
-    <div class="row content">
-
-        <div class="col-sm-5 leftHalf">
-            <p> Projects uploaded will be listed here</p>
-        </div>
-
-
-        <div class="col-sm-7 rightHalf">
-            <a href="uploadProject"><button type="button" id="uploadButton" class="btn btn-dark">Upload File</button></a>
-            <a href="runPage"><button type="button" id="uploadButton" class="btn btn-dark">Log Out</button></a>
-        </div>
-    </div>
-</div>
-
-
+<iframe src="/user/<%= name %>/runPage/echo" style="width:800px;height:500px"> </iframe>
 
 <% include partials/footer.ejs%>
