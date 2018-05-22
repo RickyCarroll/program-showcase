@@ -29,7 +29,7 @@
     "passport-http": "*",
     "passport-local": "*",
     "express-html": "^1.0.1"
-  },
+
   "author": "Zachary Cash",
   "license": "ISC"
 }

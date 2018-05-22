@@ -1,0 +1,28 @@
+<%include partials/header.ejs%>
+
+<section id="fh5co-search" data-section="User's Projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2 id="searchHeading"> Search Programs</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 subtext">
+                        <h3 id="searchHeading"> Select for a user's program to execute <br> or explore programs by levels</h3>
+                    </div>
+                </div>
+                <form method="POST" class="form-inline">
+                    <input class="form-control mr-sm-2" id="searchBar" type="search" name="username" placeholder="Search Username" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+                </form>
+                <div class="centered">
+
+                    <a href="#" class="btn search">Beginner</a>
+                    <a href="#" class="btn search">Intermediate</a>
+                    <a href="#" class="btn search">Advanced</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%include partials/footer.ejs%>
