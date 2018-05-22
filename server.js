@@ -28,6 +28,10 @@ var projects = require('./projects');
 var login = require('./login');
 var accountPage = require("./accountPage");
 var runPage = require("./runPage");
+var search = require('./searchProjects');
+var about = require('./about');
+
+
 //var account = require('./accountPage');
 
 var app = express();
@@ -88,6 +92,9 @@ app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
 app.use('/user', accountPage);
+app.use('/searchProjects', search);
+app.use('/about', about);
+
 //app.use('/user/runPage', runPage);
 //app.use('/accountPage', account);
 
