@@ -3,6 +3,7 @@ var router =  express.Router();
 var path = require('path');
 var User = require('./models/user');
 
+
 router.get('/:username', function (req, res) {
     console.log('go to the account page');
     //var username = req.params.username;
@@ -20,7 +21,8 @@ router.get('/:username', function (req, res) {
 router.get('/:username/runPage', function (req, res) {
    // console.log(req.url);
    // var name = req.url.substr(1, req.url.length - 9);
-        res.render('replit-jq-console-384401c/demos/index.html', {
+    console.log("bring up run page");
+        res.sendFile(path.join(__dirname+'/views/jqconsole/demos/index.html'), {
     });
 });
 

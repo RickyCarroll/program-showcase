@@ -21,7 +21,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/codex');
 var db = mongoose.connection;
-var jquery = require('jquery');
+
 var home = require('./home');
 var users = require('./users');
 var projects = require('./projects');
@@ -30,6 +30,7 @@ var accountPage = require("./accountPage");
 var runPage = require("./runPage");
 var search = require('./searchProjects');
 var about = require('./about');
+var jquery = require('jquery');
 
 
 //var account = require('./accountPage');
