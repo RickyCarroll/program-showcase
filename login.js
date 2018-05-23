@@ -63,7 +63,7 @@ router.post('/',
                 console.log(err);
             }
         });*/
-        res.redirect('/user/' + req.body.username);
+        res.redirect('/account/' + req.body.username);
     });
 
 module.exports = router;

@@ -93,8 +93,8 @@ app.use('/', home);
 app.use('/createAccount', users);
 app.use('/projectsPage', projects);
 app.use('/login', login);
-app.use('/user', accountPage);
-app.use('/searchProjects', search);
+app.use('/account', accountPage);
+app.use('/user', search);
 app.use('/about', about);
 
 //app.use('/user/runPage',  runPage);
