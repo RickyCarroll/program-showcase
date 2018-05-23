@@ -49,6 +49,7 @@ app.use(logger);*/
 /* View Engine */
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'views'));
+app.engine('html', require('ejs').renderFile);
 
 /* Body Parser Middleware*/
 app.use(bodyParser.json());

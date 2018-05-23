@@ -1,6 +1,6 @@
 var express = require('express');
 var router =  express.Router();
-
+var path = require('path');
 var User = require('./models/user');
 
 router.get('/:username', function (req, res) {
@@ -18,15 +18,15 @@ router.get('/:username', function (req, res) {
 });
 
 router.get('/:username/runPage', function (req, res) {
-    console.log(req.url);
-    var name = req.url.substr(1, req.url.length - 9);
-        res.render('runPage', {
-            name : name
+   // console.log(req.url);
+   // var name = req.url.substr(1, req.url.length - 9);
+        res.render('replit-jq-console-384401c/demos/index.html', {
     });
 });
 
-router.get('/:username/runPage/echo', function (req, res) {
-    res.render('echo',{
-    });
+/*router.get('/:username/runPage/echo', function (req, res) {
+        res.sendFile(path.join(__dirname+'/views/echo.html'),{
+
 });
+});*/
 module.exports = router;
