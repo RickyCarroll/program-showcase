@@ -96,7 +96,8 @@ app.use('/user', accountPage);
 app.use('/searchProjects', search);
 app.use('/about', about);
 
-//app.use('/user/runPage', runPage);
+//app.use('/user/runPage',  runPage);
+
 //app.use('/accountPage', account);
 
 
