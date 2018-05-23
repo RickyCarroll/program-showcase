@@ -1,59 +1,142 @@
-<!-- if you want to output a value you need to use
-     the = after the %. -->
-<% include partials/header.ejs%>
+<%include partials/header.ejs%>
 
-<link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
-<link href="templates/home.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-
-<h1>Welcome</h1>
-
-<nav class="navbar navbar-expand-sm navbar-custom">
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
-        <span class="navbar-toggler-icon custom-toggler"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar3">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createAccount">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="projectsPage">Search Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Help</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container-fluid">
-
-    <div class="row content">
-
-        <div class="col-sm-5 leftHalf">
-                <form method="POST" class="form-inline">
-                    <input class="form-control mr-sm-2" id="searchBar" type="search" name="username" placeholder="Search Username" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
-                </form>
-        </div>
-
-
-        <div class="col-sm-7 rightHalf">
-            <div id="buttonOptions">
-                <p id="accountText">Get started by creating a new account</p>
-                <a href="createAccount"><button type="button" id="createAccountButton" class="btn btn-dark"> Create an Account</button></a>
-                <p id="mainText"> OR </p>
-                <p id="accountText">Already have existing account?</p>
-                <a href="login"><button type="button" id="LogInButton" class="btn btn-dark">Log in</button></a>
+<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+    <div class="gradient"></div>
+    <div class="container">
+        <div class="text-wrap">
+            <div class="text-inner">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 id="mainHeading">Program. Upload. Share</h1>
+                        <h2> Share your program's execution!</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="slant"></div>
+</section>
+
+<section id="fh5co-intro">
+    <div class="container">
+        <div class="row row-bottom-padded-lg">
+            <div class="fh5co-block " style="background-image: url(images/img_7.jpg);">
+                <div class="overlay-darker"></div>
+                <div class="overlay"></div>
+                <div class="fh5co-text">
+                    <i class="fh5co-intro-icon icon-star"></i>
+                    <h2>Welcome!</h2>
+                    <p>Get started by creating an account</p>
+                    <p><a href="createAccount" class="btn btn-primary">Create Account</a></p>
+                </div>
+            </div>
+            <div class="fh5co-block" style="background-image: url(images/img_8.jpg);">
+                <div class="overlay-darker"></div>
+                <div class="overlay"></div>
+                <div class="fh5co-text">
+                    <i class="fh5co-intro-icon icon-user"></i>
+                    <h2>Returning User</h2>
+                    <p>Do you already have an account?</p>
+                    <p><a href="login" class="btn btn-primary">Log in</a></p>
+                </div>
+            </div>
+            <div class="fh5co-block" style="background-image: url(images/img_10.jpg);">
+                <div class="overlay-darker"></div>
+                <div class="overlay"></div>
+                <div class="fh5co-text">
+                    <i class="fh5co-intro-icon icon-rocket"></i>
+                    <h2>Projects</h2>
+                    <p> Search a programs by username or levels </p>
+                    <p><a href="searchProjects" class="btn btn-primary">Explore</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-<% include partials/footer.ejs%>
+<section id="fh5co-services" data-section="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-left">
+                <h2 class=" left-border">Services</h2>
+                <div class="row">
+                    <div class="col-md-8 subtext">
+                        <h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 fh5co-service">
+                <i class="icon icon-anchor"></i>
+                <h3>Brand &amp; Strategy</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+            </div>
+            <div class="col-md-6 col-sm-6 fh5co-service">
+                <i class="icon icon-layers2"></i>
+                <h3>Web &amp; Interface</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+            </div>
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-6 col-sm-6 fh5co-service">
+                <i class="icon icon-video2"></i>
+                <h3>Photo &amp; Video</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+            </div>
+            <div class="col-md-6 col-sm-6 fh5co-service">
+                <i class="icon icon-monitor"></i>
+                <h3>CMS &amp; eCommerce</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="fh5co-counters" style="background-image: url(images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+    <div class="fh5co-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2>Fun Facts</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="fh5co-counter">
+                    <i class="fh5co-counter-icon icon-briefcase"></i>
+                    <span class="fh5co-counter-number js-counter" data-from="0" data-to="89" data-speed="5000" data-refresh-interval="50">89</span>
+                    <span class="fh5co-counter-label">Finished projects</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="fh5co-counter">
+                    <i class="fh5co-counter-icon icon-code"></i>
+                    <span class="fh5co-counter-number js-counter" data-from="0" data-to="2343409" data-speed="5000" data-refresh-interval="50">2343409</span>
+                    <span class="fh5co-counter-label">Line of codes</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="fh5co-counter">
+                    <i class="fh5co-counter-icon icon-cup"></i>
+                    <span class="fh5co-counter-number js-counter" data-from="0" data-to="1302" data-speed="5000" data-refresh-interval="50">1302</span>
+                    <span class="fh5co-counter-label">Cup of coffees</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="fh5co-counter">
+                    <i class="fh5co-counter-icon icon-people "></i>
+                    <span class="fh5co-counter-number js-counter" data-from="0" data-to="52" data-speed="5000" data-refresh-interval="50">52</span>
+                    <span class="fh5co-counter-label">Happy clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%include partials/footer.ejs%>

@@ -2,37 +2,11 @@
      the = after the %. -->
 <% include partials/header.ejs%>
 
-<link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
-<link href="templates/login.css" rel="stylesheet" type="text/css">
-
-</head>
-<body>
 
 <h1> Run Page </h1>
 
 <h1> Welcome to the Run Page! </h1>
 
-<nav class="navbar navbar-expand-sm navbar-custom">
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
-        <span class="navbar-toggler-icon custom-toggler"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar3">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createAccount">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="projectsPage">Search Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Help</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <iframe src="/user/<%= name %>/runPage/echo" style="width:800px;height:500px"> </iframe>
 

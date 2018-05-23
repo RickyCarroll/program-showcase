@@ -2,52 +2,59 @@
      the = after the %. -->
 <% include partials/header.ejs%>
 
-<link href="templates/generalStyle.css" rel="stylesheet" type="text/css">
-<link href="templates/login.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-
 <h1> User Account Page </h1>
 
 <h1> Welcome <%= user.username %> to your account page! </h1>
 
-<nav class="navbar navbar-expand-sm navbar-custom">
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
-        <span class="navbar-toggler-icon custom-toggler"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar3">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createAccount">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="projectsPage">Search Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Help</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
 <a href="/user/<%= user.username %>/runPage" > Run Program </a>
-<div class="container-fluid">
-
-    <div class="row content">
-
-        <div class="col-sm-5 leftHalf">
-            <p> Projects uploaded will be listed here</p>
+<section id="fh5co-work" data-section="User's Projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2> User's Programs</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 subtext">
+                        <h3> Select a user's program to execute</h3>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row row-bottom-padded-sm">
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="images/work_1.jpg" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2>Project 1</h2>
+                        <span>Branding</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="images/work_2.jpg" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2>Project 2</h2>
+                        <span>Web</span>
+                    </div>
+                </a>
+            </div>
 
 
-        <div class="col-sm-7 rightHalf">
-            <a href="uploadProject"><button type="button" id="uploadButton" class="btn btn-dark">Upload File</button></a>
-            <a href="runPage"><button type="button" id="uploadButton" class="btn btn-dark">Log Out</button></a>
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="images/work_7.jpg" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2>Project 3</h2>
+                        <span>Web</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="row">
         </div>
     </div>
-</div>
+</section>
 
 
 
