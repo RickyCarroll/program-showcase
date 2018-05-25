@@ -72,6 +72,7 @@
     })
 </script>
 <script>
+    pypyjs.execfile('../../script.py');
     // Initialize the widget.
     var terminal = $('#console').jqconsole('', '>>> ');
 
@@ -80,21 +81,23 @@
         terminal.Write(data, 'jqconsole-output');
     }
 
-    // pypyjs.execfile('../../script.py');
+
 
     // Interact by taking input from the console prompt.
     pypyjs.repl(function(ps1) {
 
         // The argument is ">>> " or "... " depending on REPL state.
-        jqconsole.SetPromptLabel(ps1);
+        terminal.SetPromptLabel(ps1);
 
         // Return a promise if prompting for input asynchronously.
         return new Promise(function(resolve, reject) {
-            jqconsole.Prompt(true, function (input) {
+            terminal.Prompt(true, function (input) {
                 resolve(input);
             });
         });
     });
+
+    pypyjs.execfile('../../script.py');
 </script>
 </body>
 </html>

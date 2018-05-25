@@ -2,40 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="535df1ca-9d09-475d-89cd-d5c73d058714" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/views/jqconsole/demos/console.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/senior_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/senior_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runPage" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/CONTRIBUTING.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/CONTRIBUTORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/NEWS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/README.dist.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/README.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/TODO.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/deps/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/FunctionPromise.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/Promise.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/pypyjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/lib/tests/tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/analyze_code_size.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/compress_memory_initializer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/cromulate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/docker/build_base_image.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/docker/build_toolchain_image.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/extract_memory_initializer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/module_bundler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pypyjs-0.4.0/tools/rematcher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jqconsole/demos/console.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/jqconsole/demos/console.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/script.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,7 +31,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="986">
               <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
             </state>
           </provider>
@@ -70,8 +40,17 @@
       <file leaf-file-name="console.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/console.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/script.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -79,7 +58,7 @@
       <file leaf-file-name="searchProjects.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchProjects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="799">
               <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
             </state>
           </provider>
@@ -88,7 +67,7 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="340">
               <caret line="20" column="16" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
@@ -97,7 +76,7 @@
       <file leaf-file-name="createAccount.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/createAccount.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="425">
               <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
             </state>
           </provider>
@@ -146,6 +125,7 @@
         <option value="$PROJECT_DIR$/accountPage.js" />
         <option value="$PROJECT_DIR$/views/jqconsole/demos/index.html" />
         <option value="$PROJECT_DIR$/searchProjects.js" />
+        <option value="$PROJECT_DIR$/views/script.py" />
         <option value="$PROJECT_DIR$/views/jqconsole/demos/console.html" />
       </list>
     </option>
@@ -173,9 +153,9 @@
       <path value="$PROJECT_DIR$/views/pypyjs/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="112" />
-    <option name="y" value="40" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="177" />
+    <option name="y" value="-9" />
     <option name="width" value="719" />
     <option name="height" value="788" />
   </component>
@@ -246,28 +226,29 @@
       <workItem from="1526530202284" duration="71000" />
       <workItem from="1526952753061" duration="6700000" />
       <workItem from="1527102929836" duration="612000" />
-      <workItem from="1527110649637" duration="6522000" />
+      <workItem from="1527110649637" duration="7776000" />
+      <workItem from="1527274879966" duration="1435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66223000" />
+    <option name="totallyTimeSpent" value="68912000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="112" y="40" width="719" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="3" weight="0.13543192" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32953104" />
       <window_info anchor="bottom" id="Version Control" order="1" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32953104" />
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -282,19 +263,19 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.13543192" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32953104" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.13543192" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +290,41 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/console.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchProjects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/createAccount.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/generalStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -441,21 +457,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/node_modules/validator/validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2794">
           <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/console.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/generalStyle.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -464,22 +471,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/script.py" />
     <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/home.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -516,9 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/searchProjects.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -530,9 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -559,17 +551,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/createAccount.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="425">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runPage.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="340">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
@@ -578,13 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/runPage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -597,32 +579,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="986">
           <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pypyjs-0.4.0/lib/pypyjs.js">
+    <entry file="file://$PROJECT_DIR$/views/pypyjs-0.4.0/lib/pypyjs.js" />
+    <entry file="file://$PROJECT_DIR$/searchProjects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="424" column="32" selection-start-line="424" selection-start-column="32" selection-end-line="424" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="799">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/searchProjects.js">
+    <entry file="file://$PROJECT_DIR$/views/runPage.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/jqconsole/demos/console.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        <state relative-caret-position="156">
+          <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
         </state>
       </provider>
     </entry>
