@@ -47,9 +47,21 @@ p {
   margin-top: 200px;
 }
 
+#aboutName {
+  color:white;
+  font-size: 30px;
+}
+
 
 #aboutText{
-  color:black;
+  color:white;
+  font-size: 40px;
+  margin-bottom: -10px;
+}
+
+#aboutSpecifc{
+  color:white;
+  font-size: 20px;
 }
 
 #aboutInfo{
@@ -1539,7 +1551,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .row-bottom-padded-lg {
-  padding-bottom: 7em;
+  padding-bottom: 3px;
 
 }
 @media screen and (max-width: 768px) {
