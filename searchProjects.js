@@ -12,12 +12,16 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
     console.log('searching');
     User.getUserByUsername(req.body.username, function (err,user) {
-        console.log("searching");
         console.log(user);
         if (err) { throw err}
         else if (user != null) {
+            console.log("success");
             res.redirect('/user/' + user.username);
+            /*res.render('accountPage',{
+                user : user
+            })*/
         } else {
+            console.log("fail");
             res.render('searchProjects', {
                 title: "Program Showcase",
             })
@@ -30,16 +34,18 @@ var path = require('path');
 var User = require('./models/user');
 
 router.get('/:username', function (req, res) {
-    console.log('go to the account page');
+    console.log(req.url);
     //var username = req.params.username;
     //var user = User.getUser(username);
     var username = req.url.replace('/',"").toString();
     User.getUser(username, function (err, user) {
         console.log("got user");
         if (err) throw err;
-        res.render('accountPage',{
-            user : user
-        });
+        else if (user != null) {
+            res.render('userPage',{
+                user : user
+            });
+        }
     });
 });
 
