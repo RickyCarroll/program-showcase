@@ -738,6 +738,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-search{
   padding-top: 150px;
+    padding-bottom: 140px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services, #fh5co-testimonials, #fh5co-counters, #fh5co-work, #fh5co-contact,
@@ -1385,8 +1386,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 .btn.search{
-  background: #393e46;
+  background: #474747;
   color: white;
+  margin-right: 12px;
   vertical-align: middle;
   border: none !important;
   border: 2px solid transparent !important;
@@ -1425,7 +1427,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #searchBar{
   background: white;
-  width: 380px;
+  width: 490px;
 }
 
 #searchButton, #searchBar{
@@ -1434,8 +1436,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #searchButton{
-  background:#393e46 ;
-  height: 54px;
+  background:#474747 ;
+  height: 50px;
 }
 
 #searchButton:hover{
