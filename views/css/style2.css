@@ -21,6 +21,27 @@ body {
     background-color:transparent;
 }
 
+#uploadForm {
+    position: center;
+    margin-left: 150px;
+
+}
+#uploadBtn1{
+    margin-left: 400px;
+    margin-bottom: 30px;
+    padding-right: -30px;
+}
+
+#uploadBtn2{
+    margin-left: 470px;
+    margin-bottom: 30px;
+    background-color:#474747;
+}
+
+#uploadText {
+    margin-left: 400px;
+}
+
 a {
     color: #52d3aa;
     -webkit-transition: 0.5s;
