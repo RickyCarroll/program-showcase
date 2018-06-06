@@ -52,8 +52,12 @@ router.get('/:username', function (req, res) {
 router.get('/:username/runPage', function (req, res) {
     // console.log(req.url);
     // var name = req.url.substr(1, req.url.length - 9);
+    var list = req.url.split('/');
+    console.log(list);
+    var username = list[1];
     console.log("bring up run page");
     res.sendFile(path.join(__dirname+'/views/jqconsole/demos/console.html'), {
+        username: username
     });
 });
 
