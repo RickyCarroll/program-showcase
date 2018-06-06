@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+<title>Program Showcase</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
 <head>
 
@@ -10,11 +13,11 @@
 
     <style>
         html, body {
-            background-color: #333;
             color: white;
             font-family: monospace;
             margin: 0;
             padding: 0;
+
         }
         h2{
             color: #52d3aa;
@@ -196,18 +199,46 @@
         }
 
         #console {
-            height: 300px;
+            height: 450px;
             width: 750px;
             position:relative;
             background-color: black;
             border: 2px solid #CCC;
-            margin-top: 100px;
+            margin-top: 200px;
             margin-left: 350px;
         }
 
         #btnText{
             color: white;
+
         }
+
+        /* Gradient for avout section */
+        #fh5co-home .gradient {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -100;
+            opacity: .9;
+            -webkit-backface-visibility: hidden;
+            background-color: #52d3aa;
+            /* IE9, iOS 3.2+ */
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
+            /* Android 2.3 */
+            background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+            /* IE10+ */
+            background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+            background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+        }
+
+        #returnAccountBtn{
+            margin-top: 20px;
+            margin-left: 380px;
+        }
+
         .jqconsole {
             padding: 10px;
             padding-bottom: 10px;
@@ -266,9 +297,12 @@
     </nav>
 </header>
 
+<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+    <div class="gradient"></div>
+        <div id="console" style="z-index: 10"></div>
+</section>
 
-    <div id="console"></div>
-    <button class="btn btn-primary"><a href="#" id="btnText"><span>Return to account</span></a></button>
+<button class="btn btn-primary" id="returnAccountBtn"><a href="#" id="btnText"><span >Return to account</span></a></button>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../../jqconsole/lib/jqconsole.js" type="text/javascript"></script>
