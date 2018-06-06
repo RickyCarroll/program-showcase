@@ -31,11 +31,18 @@ var runPage = require("./runPage");
 var search = require('./searchProjects');
 var about = require('./about');
 var jquery = require('jquery');
+var fileUpload = require('express-fileupload');
+
+
+// default options
+
 
 
 //var account = require('./accountPage');
 
 var app = express();
+
+app.use(fileUpload());
 
 /*/!* this is middle ware and it is used to preform a task
  * in between the request and the response.
