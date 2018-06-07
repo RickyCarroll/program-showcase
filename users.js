@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('file-system');
 var router =  express.Router();
 
 var User = require('./models/user');
@@ -52,6 +53,13 @@ router.post('/', function (req,res) {
             console.log(user);
         });
 
+        var path = __dirname + '/views/Users/' + username;
+
+        fs.mkdir(path, function (err) {
+            if (err) {
+                console.log('failed to create directory', err);
+            }
+        });
         req.flash('success_msg', 'Your account has been created and now you can login.');
         console.log("Success!");
         console.log("redirecting... account has been made");

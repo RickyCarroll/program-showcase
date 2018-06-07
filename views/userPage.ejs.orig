@@ -42,23 +42,56 @@
 </header>
 
 
-<section id="fh5co-work">
-    <div class="gradient" style="z-index: -1"></div>
+
+<section id="fh5co-work" data-section="User's Projects">
+    <div class="gradient" style="z-index: -100"></div>
+    <div class="container">
         <div class="row">
             <div class="col-md-12 section-heading text-center">
-                <h2>Upload Programs</h2>
+                <h2> <%= user.username %>'s Account</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 subtext">
+                        <h3> Below are the user's shared uploaded</h3>
+                    </div>
+                </div>
             </div>
         </div>
-            <div class="col-md-12">
-                <form id='uploadForm' method='post' encType="multipart/form-data">
-                    <h2 id="uploadText">Choose program file</h2>
-                    <input id="uploadBtn1" type='text1' name="progName" placeholder="Program name">
-                    <input id="uploadBtn1" type="file" name="sampleFile" />
-                    <input class="btn btn-lg btn-primary" id="uploadBtn2" type='submit' value='Upload' />
-                </form>
+        <div class="row row-bottom-padded-sm">
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="/user/<%= user.username %>/runPage" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2 href="/user/<%= user.username %>/runPage">Test Program</h2>
+                        <span>For demo purposes...</span>
+                    </div>
+                </a>
             </div>
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="#" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2>Python Program 2</h2>
+                        <span>[Description of program]</span>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-4 col-sm-6 col-xxs-12">
+                <a href="#" class="fh5co-project-item image-popup">
+                    <div class="fh5co-text">
+                        <h2>Python Program 3</h2>
+                        <span>[Description of program]</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <%# <iframe src="/jqconsole/demos/console.html" style="width:760px;height:410px"> </iframe>   %>
+
 </section>
 
 
-
-
+</body>
+</html>

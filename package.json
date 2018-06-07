@@ -29,7 +29,8 @@
     "passport-http": "*",
     "passport-local": "*",
     "express-html": "*",
-    "express-fileupload": "*"
+    "express-fileupload": "*",
+    "file-system": "*"
   },
   "author": "Zachary Cash",
   "license": "ISC"
