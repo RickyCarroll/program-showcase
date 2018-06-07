@@ -34,6 +34,7 @@ var jquery = require('jquery');
 var fileUpload = require('express-fileupload');
 
 
+
 // default options
 
 
@@ -42,7 +43,6 @@ var fileUpload = require('express-fileupload');
 
 var app = express();
 
-app.use(fileUpload());
 
 /*/!* this is middle ware and it is used to preform a task
  * in between the request and the response.
