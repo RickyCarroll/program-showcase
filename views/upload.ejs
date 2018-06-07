@@ -24,12 +24,40 @@
 
 </head>
 <body>
+<header id="fh5co-header">
+    <!-- <div class="row"> -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <!-- Mobile Toggle Menu Button -->
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a href="about" ><span>About Us</span></a></li>
+                <li><a href="#"><span>Help</span></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-<p> upload something </p>
-<form id='uploadForm' method='post' encType="multipart/form-data">
-    <input type="file" name="sampleFile" />
-    <input type='submit' value='Upload!' />
-</form>
+
+<section id="fh5co-work">
+    <div class="gradient" style="z-index: -1"></div>
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2>Upload Programs</h2>
+            </div>
+        </div>
+            <div class="col-md-12">
+                <form id='uploadForm' method='post' encType="multipart/form-data">
+                    <h2 id="uploadText">Choose program file</h2>
+                    <input id="uploadBtn1" type="file" name="sampleFile" />
+                    <input class="btn btn-lg btn-primary" id="uploadBtn2" type='submit' value='Upload' />
+                </form>
+            </div>
+</section>
 
 
-</body>
+
+
