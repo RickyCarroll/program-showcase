@@ -1,6 +1,8 @@
 var express = require('express');
 var router =  express.Router();
+var Program = require('./models/program');
 var User = require('./models/user');
+
 /* projectsPage '/projectsPage' */
 var path = require('path');
 
@@ -42,28 +44,42 @@ router.get('/:username', function (req, res) {
         console.log("got user");
         if (err) throw err;
         else if (user != null) {
-            res.render('userPage',{
-                user : user
+            Program.getAllProgramsByUsername(username, function(err,programs) {
+                if (err) throw err;
+                console.log(programs);
+                res.render('userPage',{
+                    user : user,
+                    programs: programs
+                });
             });
         }
     });
 });
 
-router.get('/:username/runPage', function (req, res) {
+router.get('/:username/run/:progName', function (req, res) {
     // console.log(req.url);
     // var name = req.url.substr(1, req.url.length - 9);
     var list = req.url.split('/');
     console.log(list);
     var username = list[1];
-    //var progName = list[3];
-    console.log("bring up run page");
-    /*res.render('console',{
-        username:username,
-        progName:progName
-    });*/
-    /*res.sendFile(path.join(__dirname+'/views/jqconsole/demos/console.html'), {
-        username: username
-    });*/
+    var progName = list[3];
+    console.log("bring up run page" + username + " " + progName);
+
+    Program.getProgramByUsername(username,progName,function (err, programDetails) {
+        if (err) throw err;
+
+        if (!programDetails) {
+            res.redirect('/user' + username);
+        } else {
+            console.log(programDetails);
+
+            res.render('console',{
+                program : programDetails,
+                username: username,
+                account : false
+            });
+        }
+    });
 });
 
 /*router.get('/:username/runPage/echo', function (req, res) {
