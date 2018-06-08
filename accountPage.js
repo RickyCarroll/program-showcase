@@ -2,6 +2,8 @@ var express = require('express');
 var router =  express.Router();
 var fileUpload = require('express-fileupload');
 var fs = require('file-system');
+var Program = require('./models/program');
+
 
 var User = require('./models/user');
 
@@ -15,9 +17,16 @@ router.get('/:username', function (req, res) {
     User.getUser(username, function (err, user) {
         console.log("got user");
         if (err) throw err;
-        res.render('accountPage',{
-            user : user
-        });
+        else if (user != null) {
+            Program.getAllProgramsByUsername(username, function(err,programs) {
+                if (err) throw err;
+                console.log(programs);
+                res.render('accountPage',{
+                    user : user,
+                    programs: programs
+                });
+            });
+}
     });
 });
 
@@ -49,6 +58,17 @@ router.post('/:username/upload', function (req,res) {
     var sampleFile = req.files.sampleFile;
     var progName = req.body.progName;
 
+    var newProg = new Program({
+        username: username,
+        programName: progName,
+        mainProgram: sampleFile.name
+    });
+    
+    Program.addProgram(newProg,function (err, newProg) {
+       if (err) console.log(err);
+       console.log(newProg);
+    });
+
 
     var path = __dirname + '/views/Users/' + username + '/' + progName;
     fs.mkdir(path, function (err) {
@@ -66,11 +86,36 @@ router.post('/:username/upload', function (req,res) {
                 //res.send('File uploaded!');
 
 
-                res.redirect('/');
+                res.redirect('/account/'+ username);
             });
         }
     });
+});
 
+router.get('/:username/run/:progName', function (req, res) {
+    // console.log(req.url);
+    // var name = req.url.substr(1, req.url.length - 9);
+    var list = req.url.split('/');
+    console.log(list);
+    var username = list[1];
+    var progName = list[3];
+    console.log("bring up run page" + username + " " + progName);
+
+    Program.getProgramByUsername(username,progName,function (err, programDetails) {
+        if (err) throw err;
+
+        if (!programDetails) {
+            res.redirect('/account' + username);
+        } else {
+            console.log(programDetails);
+
+            res.render('console',{
+                program : programDetails,
+                username: username,
+                account : true
+            });
+        }
+    });
 });
 
 
