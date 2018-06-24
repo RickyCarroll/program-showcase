@@ -66,6 +66,7 @@ router.post('/:username/upload', function (req,res) {
     
     Program.addProgram(newProg,function (err, newProg) {
        if (err) console.log(err);
+       req.flash('success','Added Program');
        console.log(newProg);
     });
 

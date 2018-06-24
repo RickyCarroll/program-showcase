@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'icomoon';
     src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -21,11 +22,34 @@ body {
     background-color:transparent;
 }
 
-#uploadForm {
-    position: center;
-    margin-left: 150px;
-
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 90px;
 }
+.grid-container>div {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+#uploadForm {
+    margin-left: -190px;
+    padding-right: 100px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+#uploadBackground {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #474747;
+    height: 350px;
+    box-shadow: 0 10px 20px 3px #474747;
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+
 #uploadBtn1{
     margin-left: 400px;
     margin-bottom: 30px;
@@ -33,13 +57,16 @@ body {
 }
 
 #uploadBtn2{
-    margin-left: 470px;
+    margin-left: 460px;
     margin-bottom: 30px;
     background-color:#474747;
 }
 
 #uploadText {
-    margin-left: 400px;
+    margin-left: 250px;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 0;
 }
 
 a {

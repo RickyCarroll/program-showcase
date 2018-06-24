@@ -16,7 +16,9 @@ router.post('/', function (req, res) {
     console.log('searching');
     User.getUserByUsername(req.body.username, function (err,user) {
         console.log(user);
-        if (err) { throw err}
+        if (err) {
+            throw err
+        }
         else if (user != null) {
             console.log("success");
             res.redirect('/user/' + user.username);
@@ -27,7 +29,8 @@ router.post('/', function (req, res) {
             console.log("fail");
             res.render('searchProjects', {
                 title: "Program Showcase",
-            })
+                error: "No such username"
+            });
         }
     });
 
