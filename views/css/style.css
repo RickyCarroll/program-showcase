@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -7,7 +8,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -16,11 +17,62 @@ body {
   font-weight: 300;
   font-size: 20px;
   line-height: 1.5;
-  color: #777777;
-  color: #7f7f7f;
-  background: #fff;
   height: 100%;
   position: relative;
+  background-color:transparent;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 90px;
+}
+.grid-container>div {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+#uploadForm {
+  margin-left: -190px;
+  padding-right: 100px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+#uploadBackground {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #474747;
+  height: 350px;
+  box-shadow: 0 10px 20px 3px #474747;
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+#uploadBtn1{
+  margin-left: 400px;
+  margin-bottom: 30px;
+  padding-right: -30px;
+}
+
+#uploadBtn2{
+  margin-left: 460px;
+  margin-bottom: 30px;
+  background-color:#474747;
+}
+
+#uploadText {
+  margin-left: 250px;
+  font-size: 20px;
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+
+.searchAlert {
+    font-size: 20px;
+    color: #cc0000;
+    font-weight: bolder;
 }
 
 a {
@@ -39,8 +91,8 @@ p {
 }
 
 #mainHeading{
-    font-size: 300px;
-   padding-top: -100px;
+  font-size: 300px;
+  padding-top: -100px;
 }
 
 #aboutSection{
@@ -439,8 +491,28 @@ h1, h2, h3, h4, h5, h6 {
   background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
   background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
 }
+/*This is the background for a userPage*/
+#fh5co-work .gradient {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: .9;
+  -webkit-backface-visibility: hidden;
+  background-color: #52d3aa;
+  /* IE9, iOS 3.2+ */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
+  /* Android 2.3 */
+  background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+  /* IE10+ */
+  background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+}
 
-/* Gradient for avout section */
+/* Gradient for about section */
 #fh5co-aboutSection .gradient {
   position: absolute;
   top: 0;
@@ -460,17 +532,16 @@ h1, h2, h3, h4, h5, h6 {
   background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
   background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
 }
-
-
 .btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
+  width: 70px;
+  height: 70px;
+  padding: 20px 22px;
+  font-size: 25px;
   line-height: 1.33;
-  border-radius: 25px;
+  border-radius: 45px;
+  background-color: #474747;
+  margin-left: 550px;
 }
-
 /* This edits the home section */
 #fh5co-home, #fh5co-home .text-wrap {
   height: 600px;
@@ -748,11 +819,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-search{
   padding-top: 150px;
-    padding-bottom: 140px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services, #fh5co-testimonials, #fh5co-counters, #fh5co-work, #fh5co-contact,
-  }
+}
 }
 
 #fh5co-account{
@@ -760,7 +830,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-services, #fh5co-work, #fh5co-counters {
-  padding: 7em 0;
+  padding: 8em 0;
+  padding-bottom: 400px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services, #fh5co-work, #fh5co-counters {
@@ -769,19 +840,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-services {
-   background-color: #52d3aa;
-   /* IE9, iOS 3.2+ */
-   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
-   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
-   /* Android 2.3 */
-   background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
-   /* IE10+ */
-   background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
-   background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
-   overflow: hidden;
-   position: relative;
-   color: rgba(255, 255, 255, 0.7);
- }
+  background-color: #52d3aa;
+  /* IE9, iOS 3.2+ */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
+  /* Android 2.3 */
+  background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+  /* IE10+ */
+  background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+  overflow: hidden;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+}
 
 
 
@@ -1021,35 +1092,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-#fh5co-work:before, #fh5co-work:after {
-  position: absolute;
-  transform: rotate(-1.7deg);
-  -ms-transform: rotate(-1.7deg);
-  -webkit-transform: rotate(-1.7deg);
-  -o-transform: rotate(-1.7deg);
-  -moz-transform: rotate(-1.7deg);
-  background-color: #fff;
-  content: "";
-  z-index: 3;
-  display: inline-block;
-  height: 70px;
-  padding: 0;
-  width: 101%;
-}
-#fh5co-work:before {
-  top: 0;
-  margin-top: -35px;
-}
-#fh5co-work:after {
-  bottom: 0;
-  margin-bottom: -35px;
-}
+
 #fh5co-work .section-heading h2 {
   color: #fff;
 }
-#fh5co-work .section-heading h2:after {
-  background: rgba(255, 255, 255, 0.3);
-}
+
 #fh5co-work .section-heading h3 {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1396,9 +1443,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 .btn.search{
-  background: #474747;
+  background: #393e46;
   color: white;
-  margin-right: 12px;
   vertical-align: middle;
   border: none !important;
   border: 2px solid transparent !important;
@@ -1435,19 +1481,19 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
-#searchBar{
-  background: white;
-  width: 490px;
-}
 
 #searchButton, #searchBar{
   margin-top: 40px;
   margin-bottom: 100px;
 }
+#searchBar{
+    background-color: white;
+    width: 400px;
+}
 
 #searchButton{
-  background:#474747 ;
-  height: 50px;
+  background:#393e46 ;
+  height: 54px;
 }
 
 #searchButton:hover{
