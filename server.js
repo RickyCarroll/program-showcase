@@ -32,6 +32,7 @@ var search = require('./searchProjects');
 var about = require('./about');
 var jquery = require('jquery');
 var fileUpload = require('express-fileupload');
+var help = require('./help');
 
 
 
@@ -103,6 +104,7 @@ app.use('/login', login);
 app.use('/account', accountPage);
 app.use('/user', search);
 app.use('/about', about);
+app.use('/help', help);
 app.use('/searchProjects', search);
 //app.use('/user/runPage',  runPage);
 
