@@ -9,6 +9,9 @@ var ProgramScheme = mongoose.Schema({
     programName: {
         type: String
     },
+    programTitle: {
+        type: String
+    },
     mainProgram: {
         type: String
     }
@@ -29,6 +32,7 @@ module.exports.getProgramByUsername = function (username, programName, callback)
     // console.log(query);
     Program.findOne(query, callback);
 };
+
 
 module.exports.getAllProgramsByUsername = function (username, callback) {
     var query = {username: username};

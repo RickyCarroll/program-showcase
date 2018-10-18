@@ -48,6 +48,13 @@
             <div class="col-md-12 section-heading text-center">
                 <h2>Upload Programs</h2>
             </div>
+            <% if (error) { %>
+            <ul>
+                <% error.forEach(function (error) { %>
+                <div class="alert alert-danger">Error:  <%= error %></div>
+                <% }) %>
+            </ul>
+            <%}%>
         </div>
             <div class="grid-container">
                 <div class="item1"></div>
