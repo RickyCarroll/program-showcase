@@ -26,7 +26,7 @@ router.get('/:username', function (req, res) {
                     programs: programs
                 });
             });
-}
+        }
     });
 });
 
@@ -54,43 +54,90 @@ router.post('/:username/upload', function (req,res) {
 
     var user = {username : username};
 
+    console.log(req.files.sampleFile + " " + req.body.progName);
+    
+
+    if (req.files.sampleFile == null || req.body.progName == null) {
+        var errors = ['Please fill in all fields below.'];
+
+        console.log("error");
+        res.render('upload',{
+            user : user,
+            error: errors
+        });
+        return;
+    }
 
     var sampleFile = req.files.sampleFile;
     var progName = req.body.progName;
+    var progTitle = progName;
 
-    var newProg = new Program({
-        username: username,
-        programName: progName,
-        mainProgram: sampleFile.name
-    });
-    
-    Program.addProgram(newProg,function (err, newProg) {
-       if (err) console.log(err);
-       req.flash('success','Added Program');
-       console.log(newProg);
-    });
+    /* remove any spaces in the name */
+    progName = progName.replace(/\s+/g, '');
+    console.log(progName + " the program's name");
 
+    /* check the program name to avoid repeated titles */
 
-    var path = __dirname + '/views/Users/' + username + '/' + progName;
-    fs.mkdir(path, function (err) {
-        if (err) {
-            console.log('failed to create directory', err);
-            res.render('upload', {
-                user:user
-            })
+    var newProg = null;
+
+    Program.getProgramByUsername(username,progName, function (err,programDetails) {
+        if (programDetails) {
+            console.log(programDetails + ' match');
+
+            /* msg to the user! */
+            req.checkBody('progName', ' please enter a different name.').equals(!progName);
+            var errors = ['That title is already used by another one of your programs.'];
+
+            console.log("error");
+            res.render('upload',{
+                user : user,
+                error: errors
+            });
         } else {
-            // Use the mv() method to place the file somewhere on your server
-            sampleFile.mv(__dirname + '/views/Users/' + username + '/' + progName + '/' + req.files.sampleFile.name, function (err) {
-                if (err)
-                    return res.status(500).send(err);
-
-                //res.send('File uploaded!');
 
 
-                res.redirect('/account/'+ username);
+            newProg = new Program({
+                username: username,
+                programName: progName,
+                programTitle: progTitle,
+                mainProgram: sampleFile.name
+            });
+
+            console.log(newProg);
+
+
+
+            Program.addProgram(newProg, function (err, newProg) {
+                if (err) console.log(err);
+                req.flash('success', 'Added Program');
+                console.log(newProg);
+            });
+
+
+            var path = __dirname + '/views/Users/' + username + '/' + progName;
+            fs.mkdir(path, function (err) {
+                if (err) {
+                    console.log('failed to create directory', err);
+                    res.render('upload', {
+                        user: user
+                    })
+                } else {
+                    // Use the mv() method to place the file somewhere on your server
+                    sampleFile.mv(__dirname + '/views/Users/' + username + '/' + progName + '/' + req.files.sampleFile.name, function (err) {
+                        if (err)
+                            return res.status(500).send(err);
+
+                        //res.send('File uploaded!');
+
+
+                        res.redirect('/account/' + username);
+                    });
+                }
             });
         }
     });
+
+
 });
 
 router.get('/:username/run/:progName', function (req, res) {
