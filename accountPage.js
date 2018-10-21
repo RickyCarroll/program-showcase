@@ -58,7 +58,7 @@ router.post('/:username/upload', function (req,res) {
     
 
     if (req.files.sampleFile == null || req.body.progName == null) {
-        var errors = ['Please fill in all fields below.'];
+        var errors = ['Please fill out tile and select Python file'];
 
         console.log("error");
         res.render('upload',{

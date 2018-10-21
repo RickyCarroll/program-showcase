@@ -47,15 +47,18 @@
         <div class="row">
             <div class="col-md-12 section-heading text-center">
                 <h2>Upload Programs</h2>
+                <div class="col-lg-6 text-center" id="uploadError">
+                    <% if (error) { %>
+                    <ul>
+                        <% error.forEach(function (error) { %>
+                        <div class="alert alert-danger">Error:  <%= error %></div>
+                        <% }) %>
+                    </ul>
+                    <%}%>
+                </div>
             </div>
-            <% if (error) { %>
-            <ul>
-                <% error.forEach(function (error) { %>
-                <div class="alert alert-danger">Error:  <%= error %></div>
-                <% }) %>
-            </ul>
-            <%}%>
         </div>
+
             <div class="grid-container">
                 <div class="item1"></div>
                 <div class="item2" id="uploadBackground">
@@ -68,3 +71,4 @@
                 </div>
             </div>
 </section>
+
