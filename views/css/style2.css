@@ -39,6 +39,11 @@ body {
     margin-top: 10px;
 }
 
+#uploadError{
+    margin-left: 24%;
+
+}
+
 #uploadBackground {
     background-color: white;
     border-style: solid;
