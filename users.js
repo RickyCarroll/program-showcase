@@ -40,31 +40,51 @@ router.post('/', function (req,res) {
             title: "Create Account",
             errors:errors
         });
-    } else{
-
-    console.log(username);
-        var newUser = new User({
-            username: username,
-            email: email,
-            password: password
-        });
-        User.createUser(newUser, function(err, user){
-            if(err) throw err;
-            console.log(user);
-        });
-
-        var path = __dirname + '/views/Users/' + username;
-
-        fs.mkdir(path, function (err) {
-            if (err) {
-                console.log('failed to create directory', err);
-            }
-        });
-        req.flash('success_msg', 'Your account has been created and now you can login.');
-        console.log("Success!");
-        console.log("redirecting... account has been made");
-        res.redirect('/login');
     }
+
+    User.getUserByUsername(username, function(err, user) {
+        if (user) {
+            console.log(user + ' match');
+
+            /* msg to the user! */
+            req.checkBody('username', ' please enter a different name.').equals(!username);
+            var errors = ['That username is already used by another user.'];
+
+            console.log("error");
+            res.render('createAccount', {
+                title: "Create Account",
+                error: errors
+            });
+        }else{
+
+            console.log(username);
+            var newUser = new User({
+                username: username,
+                email: email,
+                password: password
+            });
+
+
+            /* put the new user in the DB*/
+            User.createUser(newUser, function(err, user){
+                if(err) throw err;
+                console.log(user);
+            });
+
+            var path = __dirname + '/views/Users/' + username;
+
+            fs.mkdir(path, function (err) {
+                if (err) {
+                    console.log('failed to create directory', err);
+                }
+            });
+            req.flash('success_msg', 'Your account has been created and now you can login.');
+            console.log("Success!");
+            console.log("redirecting... account has been made");
+            res.redirect('/login');
+        }
+    });
+
     /*This would be used if we were using mongo db. */
     /*db.users.insert(newUser,function (err,result) {
         if (err) {

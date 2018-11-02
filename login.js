@@ -2,8 +2,11 @@ var express = require('express');
 var router =  express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+//var session = require('express-session');
 
 var User = require('./models/user');
+
+
 
 router.get('/', function (req, res) {
     console.log('go to the login page');
@@ -25,7 +28,7 @@ passport.use(new LocalStrategy(
                 console.log("Unknown User");
                 return done(null,false,{message: 'Unknown User'})
             }
-            /*console.log("checking passwords");
+            /*console.log("checvking passwords");
             console.log(password);*/
             User.comparePassword(password, user.password, function (err, isMatch) {
                 /*console.log("producing results");*/
@@ -63,6 +66,19 @@ router.post('/',
                 console.log(err);
             }
         });*/
+
+        /* create the session (cookie) */
+        if (!req.session.userName && !req.session.visitCount) {
+            req.session.userName = req.body.username;
+            req.session.visitCount = 1;
+            //res.status(201).send(req.session);
+        } else {
+            req.session.visitCount += 1;
+            //res.status(200).send(req.session);
+        }
+
+        console.log('the session ' + req.session.userName);
+
         res.redirect('/account/' + req.body.username);
     });
 

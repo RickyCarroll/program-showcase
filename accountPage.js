@@ -7,9 +7,45 @@ var Program = require('./models/program');
 
 var User = require('./models/user');
 
+//
+
+
+function loggedIn(req, res, next) {
+    console.log('the url- ' + req.url);
+
+    /*var word_list = req.url.split('/');
+    var username = '';*/
+    // var username = str.join('/');
+
+    /*if (word_list.length > 1) {
+        username = req.url.replace('/',"").toString();
+    } else {
+        username = word_list[0]
+    }*/
+
+    var str = req.url.replace('/','').split('/');
+
+
+    var username = str[0];
+
+    console.log('str - ' + str);
+    console.log('middle ware - ' + username);
+    if (req.session) {
+        if (req.session.userName === username) {
+            console.log("the req.user " + req.session + '\n');
+            next();
+        } else {
+            res.redirect('/login');
+        }
+    } else {
+        res.redirect('/login');
+    }
+}
+
 router.use(fileUpload());
 
-router.get('/:username', function (req, res) {
+router.get('/:username', loggedIn, function (req, res) {
+//router.get('/:username', function (req, res) {
     //console.log('go to the account page');
     //var username = req.params.username;
     //var user = User.getUser(username);
@@ -30,7 +66,24 @@ router.get('/:username', function (req, res) {
     });
 });
 
-router.get('/:username/upload', function (req, res) {
+/* handle the logout*/
+router.get('/:username/logout', loggedIn, function(req, res, next) {
+
+    console.log("we made it to the logout!");
+
+    if (req.session) {
+        // delete session object
+        req.session.destroy(function(err) {
+            if(err) {
+                return next(err);
+            } else {
+                return res.redirect('/');
+            }
+        });
+    }
+});
+
+router.get('/:username/upload', loggedIn, function (req, res) {
     //console.log('go to the account page');
     //var username = req.params.username;
     //var user = User.getUser(username);
@@ -140,7 +193,7 @@ router.post('/:username/upload', function (req,res) {
 
 });
 
-router.get('/:username/run/:progName', function (req, res) {
+router.get('/:username/run/:progName', loggedIn, function (req, res) {
     // console.log(req.url);
     // var name = req.url.substr(1, req.url.length - 9);
     var list = req.url.split('/');
