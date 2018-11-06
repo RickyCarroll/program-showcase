@@ -34,14 +34,17 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><span>Home</span></a></li>
-                <li><a href="about" ><span>About Us</span></a></li>
-                <li><a href="#"><span>Help</span></a></li>
+                <li><a href="/about" ><span>About Us</span></a></li>
+                <li><a href="/help"><span>Help</span></a></li>
+                <li><a href="/account/<%= locals.session.userName %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a></li>
+
             </ul>
-            <a href="/account/<%= user.username %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a>
-        </div>
+            <!--<a href="/account/<%= user.username %>/logout"><button id="logout" class="btn btn-primary2" type="button">LOGOUT</button></a> -->
+          </div>
     </nav>
 </header>
 
+<!-- <p>User: <%= locals.session.userName %></p> -->
 
 <section id="fh5co-work" data-section="User's Projects">
     <div class="gradient" style="z-index: -100"></div>

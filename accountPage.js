@@ -6,11 +6,13 @@ var Program = require('./models/program');
 
 
 var User = require('./models/user');
+var sess;
 
 //
 
 
 function loggedIn(req, res, next) {
+
     console.log('the url- ' + req.url);
 
     /*var word_list = req.url.split('/');
@@ -38,8 +40,12 @@ function loggedIn(req, res, next) {
             res.redirect('/login');
         }
     } else {
+
         res.redirect('/login');
     }
+
+
+
 }
 
 router.use(fileUpload());
@@ -68,16 +74,17 @@ router.get('/:username', loggedIn, function (req, res) {
 
 /* handle the logout*/
 router.get('/:username/logout', loggedIn, function(req, res, next) {
-
     console.log("we made it to the logout!");
+    sess = req.session;
 
-    if (req.session) {
+        if (sess) {
         // delete session object
-        req.session.destroy(function(err) {
+        sess.destroy(function(err) {
             if(err) {
                 return next(err);
             } else {
                 return res.redirect('/');
+
             }
         });
     }
@@ -219,5 +226,20 @@ router.get('/:username/run/:progName', loggedIn, function (req, res) {
     });
 });
 
+router.get('/', function (req, res) {
+    /* you can render objects and array with send(object). */
+    /* render takes an .ejs file and renders it*/
+    //db.users.find(function (err,docs) {
+    //console.log(req.user);
+    //console.log(req.isAuthenticated());
+    var userSession = res.locals.session;
+    res.render('home',{
+        title: "Program Showcase",
+        user:userSession
+        //users: docs
+    });
+    //console.log(docs);
+    //});
+});
 
 module.exports = router;

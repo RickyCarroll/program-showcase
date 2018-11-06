@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #52d3aa !important;
   }
   #fh5co-header #navbar li a {
-    color: rgba(0, 0, 0, 0.5) !important;
+    color: #fff;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -321,15 +321,16 @@ h1, h2, h3, h4, h5, h6 {
     transform: scaleX(1);
   }
 }
+
 #fh5co-header .navbar {
   padding-bottom: 0;
   margin-bottom: 0;
 }
 #fh5co-header #navbar li a {
   font-family: "Source Sans Pro", Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.5);
+  color: #B3F8FF;
   position: relative;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 300;
 }
 #fh5co-header #navbar li a span {
@@ -919,13 +920,15 @@ h1, h2, h3, h4, h5, h6 {
   background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
   overflow: hidden;
   position: relative;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+
 }
 
 
 #fh5co-help{
   padding: 6em 0;
   padding-bottom: 10px;
+    background-color: black;
 }
 
 #fh5co-help:before, #fh5co-help:after {
@@ -1546,6 +1549,24 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid transparent !important;
 }
 
+.btn.btn-primary2 {
+    background: #393e46;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom:  3px;
+    padding-top: 3px;
+
+}
+.btn.btn-primary2:hover{
+    color: #52d3aa;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   box-shadow: none;
   background: #52d3aa;
@@ -1571,6 +1592,10 @@ h1, h2, h3, h4, h5, h6 {
 #searchButton{
   background:#393e46 ;
   height: 54px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 #searchButton:hover{

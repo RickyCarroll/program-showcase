@@ -36,13 +36,12 @@ var help = require('./help');
 var IGNORE = '5qFcRqWexG5uuqDiWeRHCPEvECYmDDUxzbAM1zNK';
 
 var app = express();
-
-
 /* this is middle ware and it is used to preform a task
  * in between the request and the response.
  * it was access to both the request and the response and
  * it will run every time the application is loaded.
 */
+
 
 /* View Engine */
 app.set('view engine', 'ejs');
@@ -69,6 +68,8 @@ app.use(session({
     }
 }));
 
+
+
 /* Passport init */
 app.use(passport.initialize());
 app.use(passport.session());
@@ -84,8 +85,11 @@ app.use(function (req,res,next) {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.session = req.session;
     next();
 });
+
+
 
 app.use('/', home);
 app.use('/createAccount', users);
