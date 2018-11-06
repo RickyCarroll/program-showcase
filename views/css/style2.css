@@ -25,11 +25,20 @@ body {
 .btn.btn-primary2 {
     background: #393e46;
     color: #fff;
+    text-align: center;
     font-weight: bold;
-    border: none !important;
-    border: 2px solid transparent !important;
-}
+    font-size: 12px;
+    padding-bottom:  3px;
+    padding-top: 3px;
 
+}
+.btn.btn-primary2:hover{
+    color: #52d3aa;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+
+}
 #addFileButton{
     color: #fff;
     font-weight: bold;
@@ -342,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fh5co-header #navbar li a {
     font-family: "Source Sans Pro", Arial, sans-serif;
-    color: rgba(255, 255, 255, 0.5);
+    color: #fff;
     position: relative;
     font-size: 19px;
     font-weight: 300;
