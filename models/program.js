@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-// user scheme
+// program scheme
 var ProgramScheme = mongoose.Schema({
     username: {
         type: String,
@@ -37,5 +37,10 @@ module.exports.getProgramByUsername = function (username, programName, callback)
 module.exports.getAllProgramsByUsername = function (username, callback) {
     var query = {username: username};
     Program.find(query,callback);
+}
+
+module.exports.removeProgram = function (username, programName, callback) {
+    var query = {username: username, programName: programName};
+    Program.findOneAndDelete(query, callback);
 }
 

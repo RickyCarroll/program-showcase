@@ -3,6 +3,7 @@ var router =  express.Router();
 var fileUpload = require('express-fileupload');
 var fs = require('file-system');
 var Program = require('./models/program');
+var del = require('del');
 
 
 var User = require('./models/user');
@@ -114,12 +115,28 @@ router.post('/:username/upload', function (req,res) {
 
     var user = {username : username};
 
-    console.log(req.files.sampleFile + " " + req.body.progName);
-    
+    var sampleFile = req.files.sampleFile;
+    var progName = req.body.progName;
+    var progTitle = progName;
 
-    if (req.files.sampleFile == null || req.body.progName == null) {
-        var errors = ['Please fill out tile and select Python file'];
+    console.log(sampleFile.name + " " + progName);
+    var bad_file = false;
+    var bad_input = false;
+    var errors;
 
+    if (sampleFile.name.indexOf(".py") === -1) {
+        errors = ["Please upload a python file."];
+        bad_file = true;
+    }
+
+
+
+    if (sampleFile == null || progName == null ) {
+        errors = ['Please fill out title and select Python file.'];
+        bad_input = true;
+    }
+
+    if (bad_input || bad_file) {
         console.log("error");
         res.render('upload',{
             user : user,
@@ -128,9 +145,6 @@ router.post('/:username/upload', function (req,res) {
         return;
     }
 
-    var sampleFile = req.files.sampleFile;
-    var progName = req.body.progName;
-    var progTitle = progName;
 
     /* remove any spaces in the name */
     progName = progName.replace(/\s+/g, '');
@@ -182,14 +196,33 @@ router.post('/:username/upload', function (req,res) {
                         user: user
                     })
                 } else {
-                    // Use the mv() method to place the file somewhere on your server
+                    // Use the mv() method to place the file somewhere on the server
                     sampleFile.mv(__dirname + '/views/Users/' + username + '/' + progName + '/' + req.files.sampleFile.name, function (err) {
                         if (err)
                             return res.status(500).send(err);
 
                         //res.send('File uploaded!');
+                        console.log(path + '/' + sampleFile.name);
 
+                        console.log('1');
+                        var content = fs.readFileSync(path + '/' + sampleFile.name);
 
+                        if (err) throw err;
+                        console.log('2');
+                        if(content.indexOf('import os') >= 0) {
+                            console.log("why is this happening");
+                            console.log("they used os!");
+                            bad_file = true;
+                            errors = ["you can't upload a python file that imports os."];
+                            del([path]);
+                            console.log('3');
+                            res.render('upload', {
+                                user: user,
+                                error: errors
+                            });
+                            return;
+                        }
+                        console.log('4');
                         res.redirect('/account/' + username);
                     });
                 }
@@ -224,6 +257,30 @@ router.get('/:username/run/:progName', loggedIn, function (req, res) {
             });
         }
     });
+});
+
+router.get('/:username/remove/:progName', loggedIn, function (req,res) {
+    var list = req.url.split('/');
+    console.log(list);
+    var username = list[1];
+    var progName = list[3];
+
+    Program.removeProgram(username,progName, function(err,deleted_program){
+        if (err) throw err;
+        if (deleted_program === null) {
+            console.log("error: couldn't delete program");
+        } else {
+            console.log("the program has been deleted.");
+            console.log(deleted_program);
+            // TODO:delete the program in the dir
+            var path = __dirname + '/views/Users/' + username + '/' + progName;
+            del([path + '/' + deleted_program.mainProgram]);
+            del([path]);
+        }
+    });
+
+    res.redirect('/account/' + username);
+
 });
 
 router.get('/', function (req, res) {
