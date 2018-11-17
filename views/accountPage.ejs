@@ -64,14 +64,20 @@
             <%if (programs) {%>
                 <% for(var i=0;i<programs.length;i++) {%>
                     <div class="col-md-4 col-sm-6 col-xxs-12">
-                        <a href="/account/<%= user.username %>/run/<%= programs[i].programName %>" class="fh5co-project-item image-popup">
-                            <div class="fh5co-text">
-                                <h2 href="/account/<%= user.username %>/run/<%= programs[i].programName %>"><%= programs[i].programTitle%></h2>
-                                <span>Click to run this program!</span>
-                            </div>
-                        </a>
+                    <div class="fh5co-project-item image-popup">
+
+                        <div class="fh5co-text">
+                        <a id="removeProgLink" href="/account/<%= user.username %>/remove/<%= programs[i].programName %>"><i id="removeProg" class="fh5co-intro-icon icon-remove"></i></a>
+
+                        <a id="titleLink" href="/account/<%= user.username %>/run/<%= programs[i].programName %>"><p id="progTitle"><%= programs[i].programTitle%> </p> </a>
+
+                                <span>Click title to run this program!</span>
+                        </div>
                     </div>
-                <% } %>
+
+                    </div>
+
+            <% } %>
             <% } %>
             <!--<div class="col-md-4 col-sm-6 col-xxs-12">
                 <a href="/user/<%= user.username %>/runPage" class="fh5co-project-item image-popup">
