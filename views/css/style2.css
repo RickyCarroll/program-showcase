@@ -92,6 +92,40 @@ body {
     background-color:#474747;
 }
 
+
+
+#removeProg{
+    color:#C90000;
+    margin-top: 30px;
+    font-size: 25px;
+    left: 310px;
+}
+
+#removeProgLink {
+    position: relative;
+    left: 310px;
+}
+
+#removeProg:hover {
+    text-decoration: none;
+}
+
+
+#progTitle{
+    color:black;
+    font-weight: bold;
+    margin: 0;
+    font-size: 25px !important;
+    left: 10% !important;
+}
+
+#titleLink{
+    position: relative !important;
+    left: 10% !important;
+    right: 90% !important;
+}
+
+
 #uploadText {
     margin-left: 250px;
     font-size: 20px;
@@ -1155,10 +1189,13 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none !important;
 }
 #fh5co-work .fh5co-project-item .fh5co-text h2 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     margin: 0;
 }
+
+
+
 #fh5co-work .fh5co-project-item .fh5co-text span {
     color: #b3b3b3;
     font-size: 16px;
