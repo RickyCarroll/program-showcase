@@ -66,7 +66,29 @@ body {
 
 #uploadError{
     margin-left: 24%;
+}
 
+.notFound{
+    margin-top: 30px;
+    margin-left: 100px;
+    font-size: 30px;
+    color: #474747 !important;
+
+}
+
+#notFound{
+    margin-left: 180px;
+    margin-top: 0;
+    margin-bottom: 200px;
+    font-size: 20px;
+    color: #474747 !important;
+
+}
+
+#notFoundIcon{
+    font-size: 90px !important;
+    margin-left: 330px;
+    margin-bottom: 0;
 }
 
 #uploadBackground {
@@ -100,6 +122,8 @@ body {
     font-size: 25px;
     left: 310px;
 }
+
+
 
 #removeProgLink {
     position: relative;
@@ -152,6 +176,8 @@ p {
     font-size: 300px;
     padding-top: -100px;
 }
+
+
 
 #aboutSection{
     margin-top: 200px;
@@ -719,6 +745,23 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     margin-bottom: -35px;
     padding: 0;
+    width: 101%;
+}
+
+.slant2 {
+    position: absolute;
+    transform: rotate(-1.9deg);
+    -ms-transform: rotate(-1.7deg);
+    -webkit-transform: rotate(-1.7deg);
+    -o-transform: rotate(-1.7deg);
+    -moz-transform: rotate(-1.3deg);
+    background-color: white;
+    content: "";
+    z-index: 3;
+    display: inline-block;
+    height: 0;
+    bottom: 0;
+    margin-bottom: -90%;
     width: 101%;
 }
 

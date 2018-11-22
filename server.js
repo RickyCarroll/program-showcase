@@ -89,8 +89,6 @@ app.use(function (req,res,next) {
     next();
 });
 
-
-
 app.use('/', home);
 app.use('/createAccount', users);
 app.use('/projectsPage', projects);
@@ -104,4 +102,9 @@ app.use('/searchProjects', search);
 app.listen(8000,function () {
     console.log('Server Started on Port 8000...');
 });
+
+app.use(function (req, res, next) {
+    res.status(404).render('404.ejs');
+});
+
 
