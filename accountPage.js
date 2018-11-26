@@ -49,6 +49,39 @@ function loggedIn(req, res, next) {
 
 }
 
+
+function checkForInput(filename) {
+    var data = fs.readFileSync(filename);
+
+    var wordsArray = data.toString().split(/\s+/);
+    var input_statements = [];
+
+    for (var i=0; i<wordsArray.length; i++) {
+        if (wordsArray[i].includes('input(')) {
+            var statement = wordsArray[i].substring(wordsArray[i].indexOf('input(') + 6,wordsArray[i].length).replace('\'','').replace('\"','');
+            console.log("statement: " + statement);
+            if (wordsArray[i].includes(')')) {
+                statement = statement.substring(0, statement.indexOf(')')).replace('\'','').replace('\"','');
+            } else {
+                var offset = 1;
+                var endParath = false;
+                while (i+offset < wordsArray.length && !endParath) {
+                    console.log("the word: " + wordsArray[i+offset]);
+                    if (wordsArray[i+offset].includes(')')) {
+                        endParath = true;
+                        statement = statement + wordsArray[i+offset].replace(')','').replace('\'','').replace('\"','');
+                    } else {
+                        statement = statement + wordsArray[i+offset] + " ";
+                    }
+                    offset ++;
+                }
+            }
+            input_statements.push(statement);
+        }
+    }
+    return input_statements;
+}
+
 router.use(fileUpload());
 
 router.get('/:username', loggedIn, function (req, res) {
@@ -119,24 +152,28 @@ router.post('/:username/upload', function (req,res) {
     var progName = req.body.progName;
     var progTitle = progName;
 
-    console.log(sampleFile.name + " " + progName);
-    var bad_file = false;
     var bad_input = false;
     var errors;
 
-    if (sampleFile.name.indexOf(".py") === -1) {
-        errors = ["Please upload a python file."];
-        bad_file = true;
+
+    if (sampleFile != null) {
+        if (sampleFile.name.indexOf(".py") === -1) {
+            errors = ["Please upload a python file."];
+            bad_input = true;
+        }
     }
 
-
-
-    if (sampleFile == null || progName == null ) {
-        errors = ['Please fill out title and select Python file.'];
+    if (sampleFile == null) {
+        errors = ['Please choose a Python file.'];
         bad_input = true;
     }
 
-    if (bad_input || bad_file) {
+    if (progName === '') {
+        errors = ['Please enter a name for your program that you are uploading.'];
+        bad_input = true;
+    }
+
+    if (bad_input) {
         console.log("error");
         res.render('upload',{
             user : user,
@@ -169,26 +206,10 @@ router.post('/:username/upload', function (req,res) {
             });
         } else {
 
-
-            newProg = new Program({
-                username: username,
-                programName: progName,
-                programTitle: progTitle,
-                mainProgram: sampleFile.name
-            });
-
-            console.log(newProg);
-
-
-
-            Program.addProgram(newProg, function (err, newProg) {
-                if (err) console.log(err);
-                req.flash('success', 'Added Program');
-                console.log(newProg);
-            });
-
-
             var path = __dirname + '/views/Users/' + username + '/' + progName;
+
+
+
             fs.mkdir(path, function (err) {
                 if (err) {
                     console.log('failed to create directory', err);
@@ -204,7 +225,19 @@ router.post('/:username/upload', function (req,res) {
                         //res.send('File uploaded!');
                         console.log(path + '/' + sampleFile.name);
 
-                        console.log('1');
+                        var statements = checkForInput(path+'/'+sampleFile.name);
+
+                        console.log(statements);
+
+                        newProg = new Program({
+                            username: username,
+                            programName: progName,
+                            programTitle: progTitle,
+                            mainProgram: sampleFile.name,
+                            inputMessages: statements
+                        });
+                        console.log(newProg);
+
                         var content = fs.readFileSync(path + '/' + sampleFile.name);
 
                         if (err) throw err;
@@ -215,13 +248,18 @@ router.post('/:username/upload', function (req,res) {
                             bad_file = true;
                             errors = ["you can't upload a python file that imports os."];
                             del([path]);
-                            console.log('3');
-                            res.render('upload', {
-                                user: user,
+                            console.log('username and progName \'' + username + "\' and \'" + progName + '\'');
+                            res.render('upload',{
+                                user : user,
                                 error: errors
                             });
                             return;
                         }
+                        Program.addProgram(newProg, function (err, newProg) {
+                            if (err) console.log(err);
+                            req.flash('success', 'Added Program');
+                            console.log(newProg);
+                        });
                         console.log('4');
                         res.redirect('/account/' + username);
                     });
@@ -272,7 +310,6 @@ router.get('/:username/remove/:progName', loggedIn, function (req,res) {
         } else {
             console.log("the program has been deleted.");
             console.log(deleted_program);
-            // TODO:delete the program in the dir
             var path = __dirname + '/views/Users/' + username + '/' + progName;
             del([path + '/' + deleted_program.mainProgram]);
             del([path]);

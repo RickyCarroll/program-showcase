@@ -14,7 +14,11 @@ var ProgramScheme = mongoose.Schema({
     },
     mainProgram: {
         type: String
+    },
+    inputMessages: {
+        type: Array
     }
+
 
 });
 
@@ -37,10 +41,10 @@ module.exports.getProgramByUsername = function (username, programName, callback)
 module.exports.getAllProgramsByUsername = function (username, callback) {
     var query = {username: username};
     Program.find(query,callback);
-}
+};
 
 module.exports.removeProgram = function (username, programName, callback) {
     var query = {username: username, programName: programName};
     Program.findOneAndDelete(query, callback);
-}
+};
 
